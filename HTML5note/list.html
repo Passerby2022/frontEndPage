@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表标签</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../HTML5notecss/list.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../ico/iconfont.css">
+</head>
+<body>
+    <div class="box">
+		<!--顶部-->
+		<div class="top">
+			<!--顶部内容-->
+			<div class="top_content">
+				<!--顶部内容左边-->
+				<div class="top_content_left">
+					<ul class="nav">
+						<li class="nav_li">
+							<a href="../HTML5.html">
+								<p>HTML5 笔记</p>
+							</a>
+							<ul class="nav_ul">
+								<!--<li class="nav_ul_li"><a href="#"></a></li>
+								<li class="nav_ul_li"><a href="#"></a></li>-->
+							</ul>
+						</li>
+						<li class="nav_li">
+							<a href="#">
+								<p>CSS3 笔记</p>
+							</a>
+							<ul class="nav_ul">
+								<!--<li class="nav_ul_li"><a href="#"></a></li>
+								<li class="nav_ul_li"><a href="#"></a></li>-->
+							</ul>
+						</li>
+						<li class="nav_li">
+							<a href="#">
+								<p>JavaScript 笔记</p>
+							</a>
+							<ul class="nav_ul">
+								<!--<li class="nav_ul_li"><a href="#"></a></li>
+								<li class="nav_ul_li"><a href="#"></a></li>-->
+							</ul>
+						</li>
+						<li class="nav_li">
+							<a href="#">
+								<p>摸鱼游戏</p>
+							</a>
+							<ul class="nav_ul">
+								<li class="nav_ul_li"><a href="#">PC端</a></li>
+								<li class="nav_ul_li"><a href="#">移动端</a></li>
+							</ul>
+						</li>
+					</ul>
+					<script>
+						var nav = document.querySelector('.nav');
+						var lis = nav.children;
+						for(var i = 0; i < lis.length; i++){
+							lis[i].onmouseover = function(){
+								this.children[1].style.display = 'block';
+							}
+							lis[i].onmouseout = function(){
+								this.children[1].style.display = 'none';
+							}
+						}
+					</script>
+				</div>
+				<!--顶部内容右边-->
+				<div class="top_content_right">
+					<!--顶部右边搜索框-->
+					<div class="top_content_search">
+						<input type="text" value="search" id = "search">
+						<button id="trigger">
+							<span class="iconfont icon-chazhao"></span>
+						</button>
+						<script>
+							var search = document.getElementById("search");
+							search.onfocus = function(){
+								if(search.value === 'search'){
+									search.value = ' ';
+								}
+							}
+
+							search.onblur = function(){
+								if(search.value === ' '){
+									search.value = 'search';
+								}
+							}
+						</script>
+					</div>
+					<ul>
+						<a href="#"><img src="../image/head.jpg" alt=""></a>
+						<li>
+							<a href="../index.html">
+								<p>首页</p>
+							</a>
+						</li>
+						<li>
+							<a href="../about.html">
+								<p>关于</p>
+							</a>
+						</li>
+						<li>
+							<a href="../scenery.html" class="pic">
+								<p>图片</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!--内容-->
+		<div class="content">
+			<div class="content_content">
+                <div class="content_content_left">
+                    <img src="../image/head.jpg" alt="">
+					<ul>
+						<li><a href="../HTML5.html">HTML5笔记</a></li>
+						<li><a href="">CSS3 笔记</a></li>
+						<li><a href="">JavaScript 笔记</a></li>
+					</ul>
+                </div>
+                <div class="content_content_right">
+                    <h3 class="content_h3">列表标签</h3>
+					<br>
+					<p class="content_p">1.作用：把需要制作成表的东西用表的形式显示</p>
+					<br>
+					<p class="content_p">2.定义：容器里面装载着文字或者图标的一种形式叫列表</p>
+                    <br>
+					<p class="content_p">3.最大特点：整齐，整洁，有序</p>
+                    <br>
+                    <p class="content_p">4.无序列表ul</p>
+                    <p class="content_p">(1)无序列表的各个列表项之间没有顺序级别之分，是并列的</p>
+                    <p class="content_p">(2)基本语法格式：</p>
+                    <p class="content_p">&lt;ul&gt;</p>
+                    <p class="content_p">&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;列表项1&lt;/li&gt;</p>
+                    <p class="content_p">&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;列表项2&lt;/li&gt;</p>
+                    <p class="content_p">&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;列表项3&lt;/li&gt;</p>
+                    <p class="content_p">&lt;/ul&gt;</p>
+                    <p class="content_p">(3)特点：不用排序，先到先得，后发布的内容先显示</p>
+                    <br>
+                    <p class="content_p">5.无序列表的注意事项</p>
+                    <p class="content_p">(1)&lt;ul&gt;&lt;/ul&gt;中只能嵌套&lt;li&gt;&lt;/li&gt;
+                        直接在&lt;ul&gt;&lt;/ul&gt;标签中输入其他标签或文字的做法是不允许的，
+                        但是可以写在&lt;li&gt;&lt;/li&gt;中
+                    </p>
+                    <p class="content_p">(2)&lt;li&gt;与&lt;/li&gt;之间相当于一个容器，可以容纳所有元素</p>
+                    <p class="content_p">(3)特点：无序列表会带有自己样式属性</p>
+					<br>
+                    <p class="content_p">6.有序列表ol</p>
+                    <p class="content_p">(1)定义：级位有排序顺序的列表，其各个列表项按一定顺序排序定义</p>
+                    <p class="content_p">(2)基本语法格式：</p>
+                    <p class="content_p">&lt;ol&gt;</p>
+                    <p class="content_p">&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;列表项1&lt;/li&gt;</p>
+                    <p class="content_p">&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;列表项2&lt;/li&gt;</p>
+                    <p class="content_p">&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;列表项3&lt;/li&gt;</p>
+                    <p class="content_p">&lt;/ol&gt;</p>
+                    <p class="content_p">(3)特点：有序列表会自动带有序号</p>
+                    <br>
+                    <p class="content_p">7.自定义列表dl</p>
+                    <p class="content_p">(1)作用：常用于对术语或名词进行解散和描述，自定义列表项前没有任何项目符号</p>
+                    <p class="content_p">(2)基本语法格式：</p>
+                    <p class="content_p">&lt;dl&gt;</p>
+                    <p class="content_p">&nbsp;&nbsp;&nbsp;&nbsp;&lt;dt&gt;名词1&lt;/dt&gt;</p>
+                    <p class="content_p">&nbsp;&nbsp;&nbsp;&nbsp;&lt;dd&gt;名词1解释1&lt;/dd&gt;</p>
+                    <p class="content_p">&nbsp;&nbsp;&nbsp;&nbsp;&lt;dd&gt;名词1解释2&lt;/dd&gt;</p>
+                    <p class="content_p">&nbsp;&nbsp;&nbsp;&nbsp;&lt;dt&gt;名词2&lt;/dt&gt;</p>
+                    <p class="content_p">&nbsp;&nbsp;&nbsp;&nbsp;&lt;dd&gt;名词2解释1&lt;/dd&gt;</p>
+                    <p class="content_p">&nbsp;&nbsp;&nbsp;&nbsp;&lt;dd&gt;名词2解释2&lt;/dd&gt;</p>
+                    <p class="content_p">&lt;/dl&gt;</p>
+                    <p class="content_p">(3)不允许</p>
+                    <p class="content_p">&lt;dt&gt;名词1&lt;/dt&gt;</p>
+                    <p class="content_p">&lt;dt&gt;名词2&lt;/dt&gt;</p>
+                    <p class="content_p">&lt;dd&gt;名词2解释1&lt;/dd&gt;</p>
+					<br>
+                    <br>
+                </div>
+            </div>
+		</div>
+
+		<!--底部-->
+		<div class="down">
+			<div class="down_content">
+				<a href="https://beian.miit.gov.cn">粤ICP备2022130734号-1</a>
+			</div>
+			<div>
+				<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44178102001211"><img src="../image/备案图标.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">粤公网安备 44178102001211号</p></a>
+			</div>
+		</div>
+
+		<!--回到顶部-->
+		<div class="png">
+			<a href="#" class="iconfont icon-arrow-up "></a>
+		</div>
+	</div>
+</body>
+</html>
+
+<script src="../JavaScript/base.js"></script>

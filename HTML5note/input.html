@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input控件</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../HTML5notecss/input.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../ico/iconfont.css">
+</head>
+<body>
+    <div class="box">
+		<!--顶部-->
+		<div class="top">
+			<!--顶部内容-->
+			<div class="top_content">
+				<!--顶部内容左边-->
+				<div class="top_content_left">
+					<ul class="nav">
+						<li class="nav_li">
+							<a href="../HTML5.html">
+								<p>HTML5 笔记</p>
+							</a>
+							<ul class="nav_ul">
+								<!--<li class="nav_ul_li"><a href="#"></a></li>
+								<li class="nav_ul_li"><a href="#"></a></li>-->
+							</ul>
+						</li>
+						<li class="nav_li">
+							<a href="#">
+								<p>CSS3 笔记</p>
+							</a>
+							<ul class="nav_ul">
+								<!--<li class="nav_ul_li"><a href="#"></a></li>
+								<li class="nav_ul_li"><a href="#"></a></li>-->
+							</ul>
+						</li>
+						<li class="nav_li">
+							<a href="#">
+								<p>JavaScript 笔记</p>
+							</a>
+							<ul class="nav_ul">
+								<!--<li class="nav_ul_li"><a href="#"></a></li>
+								<li class="nav_ul_li"><a href="#"></a></li>-->
+							</ul>
+						</li>
+						<li class="nav_li">
+							<a href="#">
+								<p>摸鱼游戏</p>
+							</a>
+							<ul class="nav_ul">
+								<li class="nav_ul_li"><a href="#">PC端</a></li>
+								<li class="nav_ul_li"><a href="#">移动端</a></li>
+							</ul>
+						</li>
+					</ul>
+					<script>
+						var nav = document.querySelector('.nav');
+						var lis = nav.children;
+						for(var i = 0; i < lis.length; i++){
+							lis[i].onmouseover = function(){
+								this.children[1].style.display = 'block';
+							}
+							lis[i].onmouseout = function(){
+								this.children[1].style.display = 'none';
+							}
+						}
+					</script>
+				</div>
+				<!--顶部内容右边-->
+				<div class="top_content_right">
+					<!--顶部右边搜索框-->
+					<div class="top_content_search">
+						<input type="text" value="search" id = "search">
+						<button id="trigger">
+							<span class="iconfont icon-chazhao"></span>
+						</button>
+						<script>
+							var search = document.getElementById("search");
+							search.onfocus = function(){
+								if(search.value === 'search'){
+									search.value = ' ';
+								}
+							}
+
+							search.onblur = function(){
+								if(search.value === ' '){
+									search.value = 'search';
+								}
+							}
+						</script>
+					</div>
+					<ul>
+						<a href="#"><img src="../image/head.jpg" alt=""></a>
+						<li>
+							<a href="../index.html">
+								<p>首页</p>
+							</a>
+						</li>
+						<li>
+							<a href="../about.html">
+								<p>关于</p>
+							</a>
+						</li>
+						<li>
+							<a href="../scenery.html" class="pic">
+								<p>图片</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+		<!--内容-->
+		<div class="content">
+			<div class="content_content">
+                <div class="content_content_left">
+                    <img src="../image/head.jpg" alt="">
+					<ul>
+						<li><a href="../HTML5.html">HTML5笔记</a></li>
+						<li><a href="">CSS3 笔记</a></li>
+						<li><a href="">JavaScript 笔记</a></li>
+					</ul>
+                </div>
+                <div class="content_content_right">
+                    <h3 class="content_h3">input控件</h3>
+					<br>
+					<p class="content_p">1.input标签为单标签，type属性为其最基本的属性，其取值有多种，用于指定不同的控件类型（type：控件）</p>
+                    <br>
+                    <p class="content_p">2.input标签还可以定义很多其他的属性</p>
+                    <table>
+						<thead>
+							<tr>
+								<th>属性</th>
+								<th>属性值</th>
+                                <th>描述</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>type</td>
+								<td>text</td>
+                                <td>单行文本输入框</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>password（密码）</td>
+                                <td>密码输入框</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>radio</td>
+                                <td>单选按钮</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>checkbox</td>
+                                <td>复选框</td>
+							</tr>
+                            <tr>
+								<td></td>
+								<td>button</td>
+                                <td>普通按钮</td>
+							</tr>
+                            <tr>
+								<td></td>
+								<td>submit</td>
+                                <td>提交按钮</td>
+							</tr>
+                            <tr>
+								<td></td>
+								<td>reset</td>
+                                <td>重置按钮</td>
+							</tr>
+                            <tr>
+								<td></td>
+								<td>image</td>
+                                <td>图像形式的提交按钮</td>
+							</tr>
+                            <tr>
+								<td></td>
+								<td>file</td>
+                                <td>文件域</td>
+							</tr>
+                            <tr>
+								<td>name</td>
+								<td>由用户自定义</td>
+                                <td>控件的名称（用于分类选中项）</td>
+							</tr>
+                            <tr>
+								<td>value</td>
+								<td>由用户自定义</td>
+                                <td>input控件中的默认文本值</td>
+							</tr>
+                            <tr>
+								<td>size</td>
+								<td>正整数</td>
+                                <td>input控件在页面中显示的宽度</td>
+							</tr>
+                            <tr>
+								<td>checked</td>
+								<td>checked</td>
+                                <td>定义选择控件默认被选中的项</td>
+							</tr>
+                            <tr>
+								<td>maxlength</td>
+								<td>正整数</td>
+                                <td>控件允许输入的最多字符数</td>
+							</tr>
+						</tbody>
+					</table>
+					<p class="content_p">3.表示默认选择状态：checked = "checked"</p>
+                    <br>
+					<p class="content_p">4.只有图像按钮才能这样写：&lt;input type = "image" src = ""&gt;</p>
+					<br>
+					<br>
+                </div>
+            </div>
+		</div>
+
+		<!--底部-->
+		<div class="down">
+			<div class="down_content">
+				<a href="https://beian.miit.gov.cn">粤ICP备2022130734号-1</a>
+			</div>
+			<div>
+				<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44178102001211"><img src="../image/备案图标.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">粤公网安备 44178102001211号</p></a>
+			</div>
+		</div>
+
+		<!--回到顶部-->
+		<div class="png">
+			<a href="#" class="iconfont icon-arrow-up "></a>
+		</div>
+	</div>
+</body>
+</html>
+
+<script src="../JavaScript/base.js"></script>

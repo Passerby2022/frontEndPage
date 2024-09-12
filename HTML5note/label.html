@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>label标签</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../HTML5notecss/label.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../ico/iconfont.css">
+</head>
+<body>
+    <div class="box">
+		<!--顶部-->
+		<div class="top">
+			<!--顶部内容-->
+			<div class="top_content">
+				<!--顶部内容左边-->
+				<div class="top_content_left">
+					<ul class="nav">
+						<li class="nav_li">
+							<a href="../HTML5.html">
+								<p>HTML5 笔记</p>
+							</a>
+							<ul class="nav_ul">
+								<!--<li class="nav_ul_li"><a href="#"></a></li>
+								<li class="nav_ul_li"><a href="#"></a></li>-->
+							</ul>
+						</li>
+						<li class="nav_li">
+							<a href="#">
+								<p>CSS3 笔记</p>
+							</a>
+							<ul class="nav_ul">
+								<!--<li class="nav_ul_li"><a href="#"></a></li>
+								<li class="nav_ul_li"><a href="#"></a></li>-->
+							</ul>
+						</li>
+						<li class="nav_li">
+							<a href="#">
+								<p>JavaScript 笔记</p>
+							</a>
+							<ul class="nav_ul">
+								<!--<li class="nav_ul_li"><a href="#"></a></li>
+								<li class="nav_ul_li"><a href="#"></a></li>-->
+							</ul>
+						</li>
+						<li class="nav_li">
+							<a href="#">
+								<p>摸鱼游戏</p>
+							</a>
+							<ul class="nav_ul">
+								<li class="nav_ul_li"><a href="#">PC端</a></li>
+								<li class="nav_ul_li"><a href="#">移动端</a></li>
+							</ul>
+						</li>
+					</ul>
+					<script>
+						var nav = document.querySelector('.nav');
+						var lis = nav.children;
+						for(var i = 0; i < lis.length; i++){
+							lis[i].onmouseover = function(){
+								this.children[1].style.display = 'block';
+							}
+							lis[i].onmouseout = function(){
+								this.children[1].style.display = 'none';
+							}
+						}
+					</script>
+				</div>
+				<!--顶部内容右边-->
+				<div class="top_content_right">
+					<!--顶部右边搜索框-->
+					<div class="top_content_search">
+						<input type="text" value="search" id = "search">
+						<button id="trigger">
+							<span class="iconfont icon-chazhao"></span>
+						</button>
+						<script>
+							var search = document.getElementById("search");
+							search.onfocus = function(){
+								if(search.value === 'search'){
+									search.value = ' ';
+								}
+							}
+
+							search.onblur = function(){
+								if(search.value === ' '){
+									search.value = 'search';
+								}
+							}
+						</script>
+					</div>
+					<ul>
+						<a href="#"><img src="../image/head.jpg" alt=""></a>
+						<li>
+							<a href="../index.html">
+								<p>首页</p>
+							</a>
+						</li>
+						<li>
+							<a href="../about.html">
+								<p>关于</p>
+							</a>
+						</li>
+						<li>
+							<a href="../scenery.html" class="pic">
+								<p>图片</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+		<!--内容-->
+		<div class="content">
+			<div class="content_content">
+                <div class="content_content_left">
+                    <img src="../image/head.jpg" alt="">
+					<ul>
+						<li><a href="../HTML5.html">HTML5笔记</a></li>
+						<li><a href="">CSS3 笔记</a></li>
+						<li><a href="">JavaScript 笔记</a></li>
+					</ul>
+                </div>
+                <div class="content_content_right">
+                    <h3 class="content_h3">label标签</h3>
+					<br>
+					<p class="content_p">1.label标签为input标签的元素定义标注</p>
+                    <br>
+                    <p class="content_p">2.作用：用于绑定一个表单元素，当点击label标签的时候，被绑定的表单元素就会获得输入焦点</p>
+					<br>
+                    <p class="content_p">3.for属性规定labe与哪个表单元素绑定</p>
+                    <p class="content_p">&lt;label for = "male"&gt;Male&lt;/label&gt;</p>
+                    <p class="content_p">&lt;input type = "radio" naem = "sex" id = "male" value = "male"&gt;</p>
+                    <br>
+                    <p class="content_p">4.点框以外的地方也能将鼠标的输入定位在框中（用label之间进行包裹）</p>
+                    <p class="content_p">&lt;label&gt;用户输入：&lt;input type = "text"&gt;&lt;/label&gt;</p>
+                    <br>
+					<p class="content_p">5.如果label里面有多个表单，想要定位到某一个，可以通过for id的格式来进行（与锚点定位相似）</p>
+                    <br>
+					<br>
+                </div>
+            </div>
+		</div>
+
+		<!--底部-->
+		<div class="down">
+			<div class="down_content">
+				<a href="https://beian.miit.gov.cn">粤ICP备2022130734号-1</a>
+			</div>
+			<div>
+				<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44178102001211"><img src="../image/备案图标.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">粤公网安备 44178102001211号</p></a>
+			</div>
+		</div>
+
+		<!--回到顶部-->
+		<div class="png">
+			<a href="#" class="iconfont icon-arrow-up "></a>
+		</div>
+	</div>
+</body>
+</html>
+
+<script src="../JavaScript/base.js"></script>

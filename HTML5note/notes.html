@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注释标签和路径</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../HTML5notecss/notes.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../ico/iconfont.css">
+</head>
+<body>
+    <div class="box">
+		<!--顶部-->
+		<div class="top">
+			<!--顶部内容-->
+			<div class="top_content">
+				<!--顶部内容左边-->
+				<div class="top_content_left">
+					<ul class="nav">
+						<li class="nav_li">
+							<a href="../HTML5.html">
+								<p>HTML5 笔记</p>
+							</a>
+							<ul class="nav_ul">
+								<!--<li class="nav_ul_li"><a href="#"></a></li>
+								<li class="nav_ul_li"><a href="#"></a></li>-->
+							</ul>
+						</li>
+						<li class="nav_li">
+							<a href="#">
+								<p>CSS3 笔记</p>
+							</a>
+							<ul class="nav_ul">
+								<!--<li class="nav_ul_li"><a href="#"></a></li>
+								<li class="nav_ul_li"><a href="#"></a></li>-->
+							</ul>
+						</li>
+						<li class="nav_li">
+							<a href="#">
+								<p>JavaScript 笔记</p>
+							</a>
+							<ul class="nav_ul">
+								<!--<li class="nav_ul_li"><a href="#"></a></li>
+								<li class="nav_ul_li"><a href="#"></a></li>-->
+							</ul>
+						</li>
+						<li class="nav_li">
+							<a href="#">
+								<p>摸鱼游戏</p>
+							</a>
+							<ul class="nav_ul">
+								<li class="nav_ul_li"><a href="#">PC端</a></li>
+								<li class="nav_ul_li"><a href="#">移动端</a></li>
+							</ul>
+						</li>
+					</ul>
+					<script>
+						var nav = document.querySelector('.nav');
+						var lis = nav.children;
+						for(var i = 0; i < lis.length; i++){
+							lis[i].onmouseover = function(){
+								this.children[1].style.display = 'block';
+							}
+							lis[i].onmouseout = function(){
+								this.children[1].style.display = 'none';
+							}
+						}
+					</script>
+				</div>
+				<!--顶部内容右边-->
+				<div class="top_content_right">
+					<!--顶部右边搜索框-->
+					<div class="top_content_search">
+						<input type="text" value="search" id = "search">
+						<button id="trigger">
+							<span class="iconfont icon-chazhao"></span>
+						</button>
+						<script>
+							var search = document.getElementById("search");
+							search.onfocus = function(){
+								if(search.value === 'search'){
+									search.value = ' ';
+								}
+							}
+
+							search.onblur = function(){
+								if(search.value === ' '){
+									search.value = 'search';
+								}
+							}
+						</script>
+					</div>
+					<ul>
+						<a href="#"><img src="../image/head.jpg" alt=""></a>
+						<li>
+							<a href="../index.html">
+								<p>首页</p>
+							</a>
+						</li>
+						<li>
+							<a href="../about.html">
+								<p>关于</p>
+							</a>
+						</li>
+						<li>
+							<a href="../scenery.html" class="pic">
+								<p>图片</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+		<!--内容-->
+		<div class="content">
+			<div class="content_content">
+                <div class="content_content_left">
+                    <img src="../image/head.jpg" alt="">
+					<ul>
+						<li><a href="../HTML5.html">HTML5笔记</a></li>
+						<li><a href="">CSS3 笔记</a></li>
+						<li><a href="">JavaScript 笔记</a></li>
+					</ul>
+                </div>
+                <div class="content_content_right">
+                    <h3 class="content_h3">注释标签和路径</h3>
+					<br>
+					<p class="content_p">1.注释标签(ctrl+/)</p>
+					<p class="content_p">(1)在HTML文档中添加一些便于阅读和理解但又不需要显示在页面中的注释文字</p>
+                    <p class="content_p">&lt;!--注释语句--&gt;</p>
+                    <p class="content_p">(2)注释内容不会显示到浏览器窗口中，
+                        但是作为HTML文档内容的一部分也会下载到用户的计算机上，
+                        查看源代码时可以看到
+                    </p>
+                    <p class="content_p">(3)多写注释是非常好的写代码习惯，
+                        团队协作可以更顺畅，
+                        注释是写给队友看的，
+                        浏览器是不执行的
+                    </p>
+                    <br>
+                    <p class="content_p">2.路径</p>
+                    <p class="content_p">(1)作用：比如网页需要图片，那么就需要先找到图片</p>
+                    <p class="content_p">(2)实际开发中，
+                        通常新建一个文件夹专门用于存放图像文件，
+                        这时再插入图像就需要采用"路径"的方式来指定图像文件的位置
+                    </p>
+                    <p class="content_p">(3)路径可以分为绝对路径和相对路径</p>
+                    <br>
+                    <p class="content_p">(4)相对路径</p>
+                    <p class="content_p">[1].图像文件和HTML文件位于同一文件夹，只需输入图像文件的名称即可</p>
+                    <p class="content_p">如：&lt;img src="hello.jpg"&gt;</p>
+                    <p class="content_p">[2].图像文件位于HTML文件的下一级文件夹，输入文件夹名和文件名，它们之间用/隔开</p>
+                    <p class="content_p">如：&lt;img src="image/hello.jpg"&gt;</p>
+                    <p class="content_p">[3].图像文件位于HTML文件的上一级文件夹，需要在文件名前加入../，如果是上两级则需要在文件名前加入../../，以此类推</p>
+                    <p class="content_p">如：&lt;img src="../image/hello.jpg"&gt;</p>
+                    <br>
+                    <p class="content_p">(5)绝对路径</p>
+                    <p class="content_p">[1]例子：完整的文件路径或者完整的网络地址</p>
+                    <br>
+                    <br>
+                </div>
+            </div>
+		</div>
+
+		<!--底部-->
+		<div class="down">
+			<div class="down_content">
+				<a href="https://beian.miit.gov.cn">粤ICP备2022130734号-1</a>
+			</div>
+			<div>
+				<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44178102001211"><img src="../image/备案图标.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">粤公网安备 44178102001211号</p></a>
+			</div>
+		</div>
+
+		<!--回到顶部-->
+		<div class="png">
+			<a href="#" class="iconfont icon-arrow-up "></a>
+		</div>
+	</div>
+</body>
+</html>
+
+<script src="../JavaScript/base.js"></script>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>锚点定位和特殊字符</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../HTML5notecss/point.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../ico/iconfont.css">
+</head>
+<body>
+    <div class="box">
+		<!--顶部-->
+		<div class="top">
+			<!--顶部内容-->
+			<div class="top_content">
+				<!--顶部内容左边-->
+				<div class="top_content_left">
+					<ul class="nav">
+						<li class="nav_li">
+							<a href="../HTML5.html">
+								<p>HTML5 笔记</p>
+							</a>
+							<ul class="nav_ul">
+								<!--<li class="nav_ul_li"><a href="#"></a></li>
+								<li class="nav_ul_li"><a href="#"></a></li>-->
+							</ul>
+						</li>
+						<li class="nav_li">
+							<a href="#">
+								<p>CSS3 笔记</p>
+							</a>
+							<ul class="nav_ul">
+								<!--<li class="nav_ul_li"><a href="#"></a></li>
+								<li class="nav_ul_li"><a href="#"></a></li>-->
+							</ul>
+						</li>
+						<li class="nav_li">
+							<a href="#">
+								<p>JavaScript 笔记</p>
+							</a>
+							<ul class="nav_ul">
+								<!--<li class="nav_ul_li"><a href="#"></a></li>
+								<li class="nav_ul_li"><a href="#"></a></li>-->
+							</ul>
+						</li>
+						<li class="nav_li">
+							<a href="#">
+								<p>摸鱼游戏</p>
+							</a>
+							<ul class="nav_ul">
+								<li class="nav_ul_li"><a href="#">PC端</a></li>
+								<li class="nav_ul_li"><a href="#">移动端</a></li>
+							</ul>
+						</li>
+					</ul>
+					<script>
+						var nav = document.querySelector('.nav');
+						var lis = nav.children;
+						for(var i = 0; i < lis.length; i++){
+							lis[i].onmouseover = function(){
+								this.children[1].style.display = 'block';
+							}
+							lis[i].onmouseout = function(){
+								this.children[1].style.display = 'none';
+							}
+						}
+					</script>
+				</div>
+				<!--顶部内容右边-->
+				<div class="top_content_right">
+					<!--顶部右边搜索框-->
+					<div class="top_content_search">
+						<input type="text" value="search" id = "search">
+						<button id="trigger">
+							<span class="iconfont icon-chazhao"></span>
+						</button>
+						<script>
+							var search = document.getElementById("search");
+							search.onfocus = function(){
+								if(search.value === 'search'){
+									search.value = ' ';
+								}
+							}
+
+							search.onblur = function(){
+								if(search.value === ' '){
+									search.value = 'search';
+								}
+							}
+						</script>
+					</div>
+					<ul>
+						<a href="#"><img src="../image/head.jpg" alt=""></a>
+						<li>
+							<a href="../index.html">
+								<p>首页</p>
+							</a>
+						</li>
+						<li>
+							<a href="../about.html">
+								<p>关于</p>
+							</a>
+						</li>
+						<li>
+							<a href="../scenery.html" class="pic">
+								<p>图片</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+		<!--内容-->
+		<div class="content">
+			<div class="content_content">
+                <div class="content_content_left">
+                    <img src="../image/head.jpg" alt="">
+					<ul>
+						<li><a href="../HTML5.html">HTML5笔记</a></li>
+						<li><a href="">CSS3 笔记</a></li>
+						<li><a href="">JavaScript 笔记</a></li>
+					</ul>
+                </div>
+                <div class="content_content_right">
+                    <h3 class="content_h3">链接标签</h3>
+					<br>
+					<p class="content_p">1.通过创建锚点链接，用户能够快速定位到目标内容</p>
+					<p class="content_p">(1)使用&lt;h3 id="#id名"&gt;文字&lt;/h3&gt;</p>
+                    <p class="content_p">(2)使用&lt;a href="#id名"&gt;链接文本&lt;/a&gt;，即可创建链接文本</p>
+                    <p class="content_p">(3)相应的id名标注跳转目标的位置，其中id名称自己取</p>
+                    <br>
+                    <p class="content_p">2.base标签</p>
+                    <p class="content_p">(1)作用：&lt;base&gt;可以设置整体链接打开状态</p>
+                    <br>
+                    <p class="content_p">3.特殊字符标签</p>
+                    <table>
+                        <thead>
+                            <th>特殊字符</th>
+                            <th>描述</th>
+                            <th>字符的代码</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td>空格符</td>
+                                <td>& nbsp ;</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;</td>
+                                <td>小于号</td>
+                                <td>& lt ;</td>
+                            </tr>
+                            <tr>
+                                <td>&gt;</td>
+                                <td>大于号</td>
+                                <td>& gt ;</td>
+                            </tr>
+                            <tr>
+                                <td>&amp;</td>
+                                <td>和号</td>
+                                <td>& amp ;</td>
+                            </tr>
+                            <tr>
+                                <td>&yen;</td>
+                                <td>人民币符号</td>
+                                <td>& yen ;</td>
+                            </tr>
+                            <tr>
+                                <td>&copy;</td>
+                                <td>版权符号</td>
+                                <td>& copy ;</td>
+                            </tr>
+                            <tr>
+                                <td>&reg;</td>
+                                <td>注册商标符号</td>
+                                <td>& reg ;</td>
+                            </tr>
+                            <tr>
+                                <td>&deg;</td>
+                                <td>摄氏度符号</td>
+                                <td>& deg ;</td>
+                            </tr>
+                            <tr>
+                                <td>&plusmn;</td>
+                                <td>正负 号</td>
+                                <td>& plusmn ;</td>
+                            </tr>
+                            <tr>
+                                <td>&times;</td>
+                                <td>乘号</td>
+                                <td>& times ;</td>
+                            </tr>
+                            <tr>
+                                <td>&divide;;</td>
+                                <td>除号</td>
+                                <td>& divide ;</td>
+                            </tr>
+                            <tr>
+                                <td>&sup2;</td>
+                                <td>平方号</td>
+                                <td>& sup2 ;</td>
+                            </tr>
+                            <tr>
+                                <td>&sup3;</td>
+                                <td>立方号</td>
+                                <td>& sup3 ;</td>
+                            </tr>
+                            <tr>
+                                <td>&#12288;</td>
+                                <td>空格一个汉字宽度的空格符</td>
+                                <td>& #12288 ;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <br>
+                </div>
+            </div>
+		</div>
+
+		<!--底部-->
+		<div class="down">
+			<div class="down_content">
+				<a href="https://beian.miit.gov.cn">粤ICP备2022130734号-1</a>
+			</div>
+			<div>
+				<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44178102001211"><img src="../image/备案图标.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">粤公网安备 44178102001211号</p></a>
+			</div>
+		</div>
+
+		<!--回到顶部-->
+		<div class="png">
+			<a href="#" class="iconfont icon-arrow-up "></a>
+		</div>
+	</div>
+</body>
+</html>
+
+<script src="../JavaScript/base.js"></script>

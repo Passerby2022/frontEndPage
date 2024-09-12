@@ -1,0 +1,57 @@
+/*手风琴图片*/
+.content{
+    margin-top: 70px;
+    margin-bottom: 100px;
+    height: 100%;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /*align-items: center;*/
+    align-items: center;
+}
+/* width="0px" height="0px"*/
+.content .content_content{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 90%;
+    height: 500px;
+    display: flex;
+    flex: 1;
+}
+ 
+.content .content_content .box{
+    flex: 1;
+    overflow: hidden;
+    transition: 0.5s;
+    margin: 0 20px;
+    box-shadow: 10px 10px 20px rgba(0,0,0,.5);
+    border-radius: 20px;
+    border: 10px solid #fff;
+    background-color: #fff;
+}
+
+.content .content_content .box img{
+    width: 200%;
+    height: 85%;
+    object-fit: cover;
+    transition: 1s;
+}
+
+.content .content_content .box span{
+    font-weight: 200;
+    font-size: 45px;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content .content_content .box:hover{
+    /*弹性程度*/
+    flex-basis: 40%;
+}
+
+.content .content_content .box:hover img{
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Programbright</title>
+	<link rel="stylesheet" href="./css/index.css">
+	<link rel="stylesheet" href="./css/base.css">
+	<link rel="stylesheet" href="./ico/iconfont.css">
+</head>
+<body>
+	<div class="box">
+		<!--顶部-->
+		<div class="top">
+			<!--顶部内容-->
+			<div class="top_content">
+				<!--顶部内容左边-->
+				<div class="top_content_left">
+					<ul class="nav">
+						<li class="nav_li">
+							<a href="./HTML5.html">
+								<p>HTML5 笔记</p>
+							</a>
+							<ul class="nav_ul">
+								<!--<li class="nav_ul_li"><a href="#"></a></li>
+								<li class="nav_ul_li"><a href="#"></a></li>-->
+							</ul>
+						</li>
+						<li class="nav_li">
+							<a href="#">
+								<p>CSS3 笔记</p>
+							</a>
+							<ul class="nav_ul">
+								<!--<li class="nav_ul_li"><a href="#"></a></li>
+								<li class="nav_ul_li"><a href="#"></a></li>-->
+							</ul>
+						</li>
+						<li class="nav_li">
+							<a href="#">
+								<p>JavaScript 笔记</p>
+							</a>
+							<ul class="nav_ul">
+								<!--<li class="nav_ul_li"><a href="#"></a></li>
+								<li class="nav_ul_li"><a href="#"></a></li>-->
+							</ul>
+						</li>
+						<li class="nav_li">
+							<a href="#">
+								<p>摸鱼游戏</p>
+							</a>
+							<ul class="nav_ul">
+								<li class="nav_ul_li"><a href="#">PC端</a></li>
+								<li class="nav_ul_li"><a href="#">移动端</a></li>
+							</ul>
+						</li>
+					</ul>
+					<script>
+						var nav = document.querySelector('.nav');
+						var lis = nav.children;
+						for(var i = 0; i < lis.length; i++){
+							lis[i].onmouseover = function(){
+								this.children[1].style.display = 'block';
+							}
+							lis[i].onmouseout = function(){
+								this.children[1].style.display = 'none';
+							}
+						}
+					</script>
+				</div>
+				<!--顶部内容右边--> 
+				<div class="top_content_right">
+					<!--顶部右边搜索框-->
+					<div class="top_content_search">
+						<input type="text" value="search" id = "search">
+						<button id="trigger">
+							<span class="iconfont icon-chazhao"></span>
+						</button>
+						<script>
+							var search = document.getElementById("search");
+							document.addEventListener('keyup', function(e){
+								if(e.keyCode === 83){
+									search.focus();
+								}
+							})
+							search.onfocus = function(){
+								if(search.value === 'search'){
+									search.value = ' ';
+								}
+							}
+
+							search.onblur = function(){
+								if(search.value === ' '){
+									search.value = 'search';
+								}
+							}
+						</script>
+					</div>
+					<ul>
+						<a href="#"><img src="./image/head.jpg" alt=""></a>
+						<li>
+							<a href="./index.html">
+								<p>首页</p>
+							</a>
+						</li>
+						<li>
+							<a href="./about.html">
+								<p>关于</p>
+							</a>
+						</li>
+						<li>
+							<a href="./scenery.html" class="pic">
+								<p>图片</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!---->
+		<div class="content">
+			<!--侧面切换背景图片-->
+			<div class="content_second">
+				<img src="./banner/banner8.jpg" alt="" width="0px" height="0px">
+				<img src="./banner/banner7.jpg" alt="" width="0px" height="0px">
+				<img src="./banner/banner4.jpg" alt="" width="0px" height="0px">
+				<img src="./banner8k/banner8k6.jpg" alt="" width="0px" height="0px">
+				<img src="./banner/banner12.png" alt="" width="0px" height="0px">
+			</div>
+			<script>
+				//var first = document.querySelector('.content_first').querySelector('.setting');
+				var image= document.querySelector('.content_second').querySelectorAll('img');
+				for(var i = 0; i < image.length; i++){
+					image[i].onclick = function(){
+						document.body.style.backgroundImage = 'url(' + this.src + ')';
+					}
+				}
+			</script>
+
+			<!--赛博朋克文字-->
+			<div class="content_third">
+				<div class="text">
+					<span class="span">
+						Welcome!!!
+					</span>
+				</div>
+			</div>
+
+			<!--显示切换功能的按钮-->
+			<div class="content_four">
+				<div class="content_four_left">
+					<button class="one">主页背景切换</button>
+					<div class="an">
+						<button class="two">显示</button>
+						<button class="third">隐藏</button>
+					</div>
+					<script>
+						var button1 = document.querySelector('.content_four').querySelector('.content_four_left').querySelector('.one');
+						var button2 = document.querySelector('.content_four').querySelector('.content_four_left').querySelector('.two');
+						var button3 = document.querySelector('.content_four').querySelector('.content_four_left').querySelector('.third');
+						var picture = document.querySelector('.content_second');
+						button2.addEventListener('mouseover', function(){
+							picture.style.display = 'block';
+						})
+						button3.addEventListener('mouseover', function(){
+							picture.style.display = 'none';
+						})
+						button1.addEventListener('mouseover', function(){
+							button2.style.display = 'inline-block';
+							button3.style.display = 'inline-block';
+						})
+						button1.addEventListener('mouseout', function(){
+							button2.style.display = 'none';
+							button3.style.display = 'none';
+						})
+					</script>
+				</div>
+			</div>
+		</div>
+
+		<!--底部-->
+		<div class="down">
+			<div class="down_content">
+				<a href="https://beian.miit.gov.cn">粤ICP备2022130734号-1</a>
+			</div>
+			<div>
+				<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44178102001211"><img src="./image/备案图标.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">粤公网安备 44178102001211号</p></a>
+			</div>
+		</div>
+	</div>
+
+	<!--鼠标的粒子效果-->
+	<div id="back"></div>
+	<script src="./JavaScript/script.js"></script>
+</body>
+</html>
+
+<script src="../JavaScript/base.js"></script>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格标签</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../HTML5notecss/table.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../ico/iconfont.css">
+</head>
+<body>
+    <div class="box">
+		<!--顶部-->
+		<div class="top">
+			<!--顶部内容-->
+			<div class="top_content">
+				<!--顶部内容左边-->
+				<div class="top_content_left">
+					<ul class="nav">
+						<li class="nav_li">
+							<a href="../HTML5.html">
+								<p>HTML5 笔记</p>
+							</a>
+							<ul class="nav_ul">
+								<!--<li class="nav_ul_li"><a href="#"></a></li>
+								<li class="nav_ul_li"><a href="#"></a></li>-->
+							</ul>
+						</li>
+						<li class="nav_li">
+							<a href="#">
+								<p>CSS3 笔记</p>
+							</a>
+							<ul class="nav_ul">
+								<!--<li class="nav_ul_li"><a href="#"></a></li>
+								<li class="nav_ul_li"><a href="#"></a></li>-->
+							</ul>
+						</li>
+						<li class="nav_li">
+							<a href="#">
+								<p>JavaScript 笔记</p>
+							</a>
+							<ul class="nav_ul">
+								<!--<li class="nav_ul_li"><a href="#"></a></li>
+								<li class="nav_ul_li"><a href="#"></a></li>-->
+							</ul>
+						</li>
+						<li class="nav_li">
+							<a href="#">
+								<p>摸鱼游戏</p>
+							</a>
+							<ul class="nav_ul">
+								<li class="nav_ul_li"><a href="#">PC端</a></li>
+								<li class="nav_ul_li"><a href="#">移动端</a></li>
+							</ul>
+						</li>
+					</ul>
+					<script>
+						var nav = document.querySelector('.nav');
+						var lis = nav.children;
+						for(var i = 0; i < lis.length; i++){
+							lis[i].onmouseover = function(){
+								this.children[1].style.display = 'block';
+							}
+							lis[i].onmouseout = function(){
+								this.children[1].style.display = 'none';
+							}
+						}
+					</script>
+				</div>
+				<!--顶部内容右边-->
+				<div class="top_content_right">
+					<!--顶部右边搜索框-->
+					<div class="top_content_search">
+						<input type="text" value="search" id = "search">
+						<button id="trigger">
+							<span class="iconfont icon-chazhao"></span>
+						</button>
+						<script>
+							var search = document.getElementById("search");
+							search.onfocus = function(){
+								if(search.value === 'search'){
+									search.value = ' ';
+								}
+							}
+
+							search.onblur = function(){
+								if(search.value === ' '){
+									search.value = 'search';
+								}
+							}
+						</script>
+					</div>
+					<ul>
+						<a href="#"><img src="../image/head.jpg" alt=""></a>
+						<li>
+							<a href="../index.html">
+								<p>首页</p>
+							</a>
+						</li>
+						<li>
+							<a href="../about.html">
+								<p>关于</p>
+							</a>
+						</li>
+						<li>
+							<a href="../scenery.html" class="pic">
+								<p>图片</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+		<!--内容-->
+		<div class="content">
+			<div class="content_content">
+                <div class="content_content_left">
+                    <img src="../image/head.jpg" alt="">
+					<ul>
+						<li><a href="../HTML5.html">HTML5笔记</a></li>
+						<li><a href="">CSS3 笔记</a></li>
+						<li><a href="">JavaScript 笔记</a></li>
+					</ul>
+                </div>
+                <div class="content_content_right">
+                    <h3 class="content_h3">表格标签</h3>
+					<br>
+					<p class="content_p">1.表格table</p>
+                    <p class="content_p">(1).例子</p>
+                    <table>
+						<thead>
+							<tr>
+								<th>支出项目</th>
+								<th>单价</th>
+                                <th>数目</th>
+								<th>金额(元)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>垃圾桶</td>
+								<td>30</td>
+                                <td>12</td>
+                                <td>360</td>
+							</tr>
+							<tr>
+								<td>垃圾牌</td>
+								<td>100</td>
+                                <td>12</td>
+                                <td>1200</td>
+							</tr>
+							<tr>
+								<td>宣传单</td>
+								<td>1</td>
+                                <td>400</td>
+                                <td>32</td>
+							</tr>
+							<tr>
+								<td>宣传册</td>
+								<td>3</td>
+                                <td>250</td>
+                                <td>750</td>
+							</tr>
+                            <tr>
+								<td>合计</td>
+								<td>-</td>
+                                <td>-</td>
+                                <td>2342</td>
+							</tr>
+						</tbody>
+					</table>
+					<p class="content_p">(2)表格现在还是较为常用的一种标签，但不是用来布局，常见于处理和显示表格式数据</p>
+                    <p class="content_p">(3)创建表格的基本语法</p>
+                    <p class="content_p">&lt;table&gt;（大表格）</p>
+                    <p class="content_p">&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;（行）</p>
+                    <p class="content_p">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;单元格内的文字&lt;/td&gt;</p>
+                    <p class="content_p">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;单元格内的文字&lt;/td&gt;</p>
+                    <p class="content_p">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;</p>
+                    <p class="content_p">&lt;/table&gt;</p>
+                    <p class="content_p">(4)&lt;table&gt;&lt;/table&gt;&lt;tr&gt;&lt;/tr&gt;&lt;td&gt;&lt;/td&gt;缺1不可</p>
+                    <p class="content_p">(5)table用于定义一个表格</p>
+                    <p class="content_p">(6)tr用于定义表格中的一行，必须嵌套在table标签中，在table中包含多少个tr标签就代表有多少行</p>
+                    <p class="content_p">(7)td用于定义表格中的单元格，必须嵌套在tr中，一个tr标签中包含几个td标签就表示改行中有多少单元格即多少列</p>
+					<br>
+					<p class="content_p">2.表格属性</p>
+					<table>
+						<thead>
+							<tr>
+								<th>属性名</th>
+								<th>含义</th>
+								<th>常用属性名</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>border</td>
+								<td>设置表格的边框（默认border="0"无边框）</td>
+								<td>像素值</td>
+							</tr>
+							<tr>
+								<td>cellspacing</td>
+								<td>设置单元格与单元格边框之间的空白间距，两个单元格之间的距离</td>
+								<td>像素值（默认为2像素）</td>
+							</tr>
+							<tr>
+								<td>cellpadding</td>
+								<td>设置单元格内容与单元格边框之间的空白间距</td>
+								<td>像素值（默认为1像素）</td>
+							</tr>
+							<tr>
+								<td>width</td>
+								<td>设置表格的宽度</td>
+								<td>像素值</td>
+							</tr>
+							<tr>
+								<td>height</td>
+								<td>设置表格的高度</td>
+								<td>像素值</td>
+							</tr>
+							<tr>
+								<td>align</td>
+								<td>设置表格在网页中的水平对齐方式</td>
+								<td>left，center，right</td>
+							</tr>
+						</tbody>
+					</table>
+					<br>
+					<p class="content_p">3.表头标签</p>
+					<p class="content_p">(1)表头一般位于表格的第一行或第一列，其文本加粗居中</p>
+					<p class="content_p">(2)设置表头，用表头标签&lt;th&gt;&lt;/th&gt;替代相应的单元格标签&lt;td&gt;&lt;/td&gt;即可</p>
+                    <br>
+					<p class="content_p">4.表格结构</p>
+					<p class="content_p">(1)在使用表格进行布局时，可以将表格划分为头部，主体和页脚(页脚有兼容性问题)</p>
+					<p class="content_p">(2)表格的相关标签必须位于&lt;table&gt;&lt;/table&gt;中</p>
+					<p class="content_p">(3)&lt;tbody&gt;&lt;/tbody&gt;用于定义表格的主体</p>
+					<br>
+					<p class="content_p">5.表格标题caption</p>
+					<p class="content_p">(1)定义和用法</p>
+					<p class="content_p">&lt;table&gt;</p>
+					<p class="content_p">&nbsp;&nbsp;&nbsp;&nbsp;&lt;caption&gt;&lt;/caption&gt;</p>
+					<p class="content_p">&lt;/table&gt;</p>
+					<br>
+					<p class="content_p">6.合并单元格</p>
+					<p class="content_p">(1)跨行合并：rowsapn 跨列合并colspan</p>
+					<p class="content_p">(2)合并单元格思想：将多个内容合并的时候，就会有多余的东西，要把它删掉
+						公式：删除的个数 = 合并的个数 - 1（合并的顺序：先上后下，先左后右）
+					</p>
+					<br>
+					<p class="content_p">7.表单标签</p>
+					<p class="content_p">(1)目的是为了收集用户信息</p>
+					<p class="content_p">(2)在HTML中，一个完整的表单通常由表单控件（也称表单元素），提示信息和表单域3个部分组成</p>
+					<br>
+					<br>
+                </div>
+            </div>
+		</div>
+
+		<!--底部-->
+		<div class="down">
+			<div class="down_content">
+				<a href="https://beian.miit.gov.cn">粤ICP备2022130734号-1</a>
+			</div>
+			<div>
+				<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44178102001211"><img src="../image/备案图标.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">粤公网安备 44178102001211号</p></a>
+			</div>
+		</div>
+
+		<!--回到顶部-->
+		<div class="png">
+			<a href="#" class="iconfont icon-arrow-up "></a>
+		</div>
+	</div>
+</body>
+</html>
+
+<script src="../JavaScript/base.js"></script>
